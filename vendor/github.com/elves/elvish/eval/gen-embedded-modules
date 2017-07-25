@@ -1,0 +1,18 @@
+#!/usr/bin/env elvish
+
+out = ./embedded_modules.go
+
+{
+	echo "package eval"
+	echo "var embeddedModules = map[string]string{"
+
+	for f [*.elv] {
+		print '"'$f[:-4]'": `'
+		cat $f | sed 's/`/`+"`"+`/g'
+		echo '`,'
+    }
+
+	echo "}"
+} > $out
+
+gofmt -w $out

@@ -1,0 +1,11 @@
+[[constraint]]
+  name = "github.com/elves/elvish"
+  revision = "013410db16804ad2d6f9db32f14da9c5742925cf"
+
+[[constraint]]
+  name = "github.com/boltdb/bolt"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/mattn/go-sqlite3"
+  version = "1.2.0"
